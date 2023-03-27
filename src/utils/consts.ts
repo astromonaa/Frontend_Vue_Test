@@ -1,0 +1,1 @@
+export const API = 'https://nuxt-test-3b317-default-rtdb.firebaseio.com'
