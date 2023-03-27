@@ -1,6 +1,6 @@
 <template>
   <div class="search-input">
-    <input type="text" v-model="value" />
+    <input type="text" @input="updateInput" :value="modelValue" />
     <my-button class="search-btn">
       <img :src="Search" alt="search" />
     </my-button>
@@ -10,18 +10,16 @@
 <script setup lang="ts">
 import myButton from "../UI/myButton.vue";
 import Search from "../../assets/search.svg";
-import { ref, watch } from "vue";
-import { useDebounce } from '../../hooks/useDebounce';
-import { useStore } from "../../store";
 
-const value = ref('')
-const store = useStore()
-
-const debounce = useDebounce(value)
-
-watch(debounce, (currentValue, oldValue) => {
-  store.commit('setSearchValue', currentValue)
+defineProps({
+  modelValue: String
 })
+const emit = defineEmits(['update:modelValue'])
+
+const updateInput = (e:Event) => {
+  const target = e.target as HTMLInputElement
+  emit('update:modelValue', target.value)
+}
 
 
 </script>

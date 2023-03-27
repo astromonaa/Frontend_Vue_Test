@@ -1,13 +1,26 @@
 <template>
   <div class="sort-block">
     <types-switcher/>
-    <search-input/>
+    <search-input v-model="inputValue" />
   </div>
 </template>
 
 <script setup lang="ts">
 import TypesSwitcher from './TypesSwitcher.vue';
 import SearchInput from './SearchInput.vue'
+
+import { ref, watch } from "vue";
+import { useDebounce } from '../../hooks/useDebounce';
+import { useStore } from "../../store";
+
+const inputValue = ref('')
+const store = useStore()
+
+const debounce = useDebounce(inputValue)
+
+watch(debounce, (currentValue, oldValue) => {
+  store.commit('setSearchValue', currentValue)
+})
 
 </script>
 
