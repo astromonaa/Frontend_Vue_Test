@@ -113,7 +113,7 @@ const {addButtonText, isDealsPage, likeFill, sum, addButtonClick} = useProduct(p
     padding: 0;
     border: none;
   }
-  .card-btn{
+  .card-bottom{
     margin-top: 10px;
   }
 }

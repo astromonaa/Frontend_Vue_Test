@@ -102,4 +102,10 @@
     transform: rotate(360deg);
   }
 }
+
+@media (max-width: 600px) {
+  .lds-roller {
+    width: 77%;
+  }
+}
 </style>
