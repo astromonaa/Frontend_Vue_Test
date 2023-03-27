@@ -1,6 +1,6 @@
 <template>
   <loader v-if="isLoading" />
-  <products-list :products="sortedAndSearchedProducts" v-else-if="!isLoadding && sortedAndSearchedProducts.length" />
+  <products-list :products="sortedAndSearchedProducts" v-else-if="!isLoading && sortedAndSearchedProducts.length" />
   <h1 v-else >Список товаров пуст</h1>
 </template>
 

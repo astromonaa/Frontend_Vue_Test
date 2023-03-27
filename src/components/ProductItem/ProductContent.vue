@@ -1,20 +1,20 @@
 <template>
   <div class="product-content">
     <span class="product-type">{{ productType }}</span>
-    <div class="product-name">{{ product.name }}</div>
+    <div class="product-name">{{ product?.name }}</div>
     <div class="product-location">
       <img :src="Location" alt="location" />
-      <span>{{ product.address }}</span>
+      <span>{{ product?.address }}</span>
     </div>
     <div class="product-seller">
       <span>Продавец</span>
-      <span>{{ product.seller }}</span>
+      <span>{{ product?.seller }}</span>
     </div>
     <div class="product-category">
       <span>Вид товара</span>
-      <span>{{ product.category }}</span>
+      <span>{{ product?.category }}</span>
     </div>
-    <div class="product-description">{{ product.description }}</div>
+    <div class="product-description">{{ product?.description }}</div>
   </div>
 </template>
 
