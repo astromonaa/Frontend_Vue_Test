@@ -3,21 +3,21 @@
     <strong>{{ sum.toLocaleString() }} &#8381;</strong>
     <div class="card-middle">
       <span>Количество</span>
-      <span>{{ product.count }} шт.</span>
+      <span>{{ product?.count }} шт.</span>
       <span>Стоимость за штуку</span>
-      <span>{{ product.price.toLocaleString() }} &#8381;</span>
+      <span>{{ product?.price.toLocaleString() }} &#8381;</span>
     </div>
     <div class="card-bottom">
       <my-button
         class="card-btn"
         @click="addButtonClick"
-        :class="{inDeals: product.inDeals, dealsBtn: isDealsPage}"
+        :class="{inDeals: product?.inDeals, dealsBtn: isDealsPage}"
       >
         {{addButtonText}}
       </my-button>
       <like
         class="card-like"
-        :class="{favourite: product.favourite}"
+        :class="{favourite: product?.favourite}"
         @click="store.commit('addToFavourites', product)"
         :likeFill="likeFill"
       />
@@ -26,7 +26,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, PropType } from "vue";
+import { PropType } from "vue";
 import { IProduct } from "../../types/types";
 import myButton from "../UI/myButton.vue";
 import Like from "../UI/Like.vue";

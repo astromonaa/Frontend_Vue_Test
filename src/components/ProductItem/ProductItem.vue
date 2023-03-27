@@ -1,6 +1,6 @@
 <template>
   <div class="product-item">
-    <img :src="product.image" alt="" />
+    <img :src="product?.image" alt="image" />
     <product-content :product="product"/>
     <product-card :product="product" />
   </div>
